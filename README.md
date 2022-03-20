@@ -1,8 +1,10 @@
 # COMP2113-project
 Team members:
+
 Kong Man Min (3035929217), Ng Tsz Hin (3035855571)
 
 Description:
+
 This is a text-based adventure game.
 Once upon a time, Princess Lily was captured by some demons and was locked in the top of a tower. The player will need to enter the tower from level 1 and find a path to reach the next level, until he reaches the top, where he will fight the boss save Princess Lily.
 
@@ -20,6 +22,7 @@ Game Rules:
 11) A boss will appear in the last level
 
 List of features:
+
 1(Generation of random game sets or events):
 Demon, potion, sword and armor will be spawned randomly. 
 
