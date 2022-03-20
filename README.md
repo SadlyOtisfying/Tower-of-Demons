@@ -1,4 +1,4 @@
-# COMP2113-project
+# Tower of Demons
 Team members:
 
 Kong Man Min (3035929217), Ng Tsz Hin (3035855571)
