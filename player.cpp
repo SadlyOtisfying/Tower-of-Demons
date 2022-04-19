@@ -1,3 +1,5 @@
+#include "player.h"
+
 #include <fstream>
 #include <iostream>
 
@@ -38,9 +40,5 @@ struct Player {
         fout << this->atk << endl;
         fout << this->def << endl;
         fout.close();
-    }
-
-    Player() { 
-        savePlayer();
     }
 };
