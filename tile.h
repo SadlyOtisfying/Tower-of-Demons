@@ -1,8 +1,8 @@
 #ifndef TILE_H
 #define TILE_H
 
-#include "player.h"
 #include <string>
+#include "player.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ struct Tile {
     double hp;
     Tile(int level, string type);
     void generate();
-    bool battle(Player &p);
+    bool battle(Player& p);
     void removeItem();
 };
 
