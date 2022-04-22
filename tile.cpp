@@ -34,8 +34,21 @@ void Tile::generate() {
     }
 }
 
-void Tile::battle() {
-
+void Tile::battle(Player &p) {
+    while(p.hp > 0 && hp > 0) {
+        hp -= p.atk * (1 - def * 0.01);
+        cout<<"You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - def * 0.01) << "damage, it has " << hp << "left." << endl;
+        if(hp <= 0)
+            break;
+        p.hp -= atk * (1 - p.def * 0.01);
+        cout<<"The demon hit you for " << atk << " damage, you took " << atk * (1 - p.def * 0.01) << "damage, you have " << p.hp << "left." << endl;
+    }
+    if(hp <= 0)
+        cout<<"You have slained the demon!"<<endl;
+    else {
+        cout<<"YOU DIED. RIP."<<endl;
+        p.loadPlayer();
+    }
 }
 
 void Tile::removeItem() {
