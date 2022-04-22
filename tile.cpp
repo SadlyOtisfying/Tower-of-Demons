@@ -11,10 +11,6 @@ Tile::Tile(int level, string type) {
     this->type = type;
 }
 
-string Tile::getType() {
-    return type;
-}
-
 //generate value of tile
 void Tile::generate() {
     srand(time(NULL));
