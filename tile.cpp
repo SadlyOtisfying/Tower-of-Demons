@@ -12,6 +12,10 @@ void Tile::item::generate() {
 
 }
 
-void Tile::item::generate() {
+void Tile::demon::generate() {
+
+}
+
+void Tile::demon::battle(Player p) {
     
 }
