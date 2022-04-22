@@ -12,7 +12,7 @@ void Player::loadPlayer() {
         cout << "Error in file opening" << endl;
         exit(1);
     }
-    fin >> this->level >> this->hp >> this->atk >> this->def;
+    fin >> level >> hp >> atk >> def;
     fin.close();
 }
 
@@ -23,9 +23,9 @@ void Player::savePlayer() {
         cout << "Error in file opening" << endl;
         exit(1);
     }
-    fout << this->level << endl;
-    fout << this->hp << endl;
-    fout << this->atk << endl;
-    fout << this->def << endl;
+    fout << level << endl;
+    fout << hp << endl;
+    fout << atk << endl;
+    fout << def << endl;
     fout.close();
 }
