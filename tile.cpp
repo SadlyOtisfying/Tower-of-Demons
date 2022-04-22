@@ -6,13 +6,10 @@
 
 using namespace std;
 
-Tile::Tile(int level, string type) {
+// generate value of tile
+void Tile::generate(int level, string type) {
     this->level = level;
     this->type = type;
-}
-
-// generate value of tile
-void Tile::generate() {
     srand(time(NULL));
     if (type == "POTION") {
         value = rand() % 10 + 10;

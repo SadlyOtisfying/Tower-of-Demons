@@ -11,8 +11,7 @@ struct Tile {
     string type = "";
     int value, atk, def;
     double hp;
-    Tile(int level, string type);
-    void generate();
+    void generate(int level, string type);
     bool battle(Player& p);
     void removeItem();
 };
