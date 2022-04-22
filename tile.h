@@ -7,18 +7,14 @@
 using namespace std;
 
 struct Tile {
+    int level;
     string type = "";
-    void removeItem();
+    int value, hp, atk, def;
     Tile(int level, string type);
-    struct item {
-        int value;
-        void generate();
-    };
-    struct demon {
-        int hp, atk, def;
-        void generate();
-        void battle(Player p);
-    };
+    string getType();
+    void generate();
+    void battle();
+    void removeItem();
 };
 
 #endif

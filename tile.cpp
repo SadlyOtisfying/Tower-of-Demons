@@ -1,21 +1,21 @@
-#include <tile.h>
-
-void Tile::removeItem() {
-    type = "SPACE";
-}
+#include "tile.h"
 
 Tile::Tile(int level, string type) {
 
 }
 
-void Tile::item::generate() {
+string Tile::getType() {
 
 }
 
-void Tile::demon::generate() {
+void Tile::generate() {
 
 }
 
-void Tile::demon::battle(Player p) {
+void Tile::battle() {
+
+}
+
+void Tile::removeItem() {
     
 }
