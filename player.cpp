@@ -16,6 +16,7 @@ void Player::loadPlayer() {
     fin >> level >> hp >> atk >> def;
     fin.close();
 }
+
 //save the player to playerdata.txt
 void Player::savePlayer() {
     ofstream fout;
