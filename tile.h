@@ -14,7 +14,7 @@ struct Tile {
     Tile(int level, string type);
     string getType();
     void generate();
-    void battle(Player &p);
+    bool battle(Player &p);
     void removeItem();
 };
 
