@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//load the player from playerdata.txt
 void Player::loadPlayer() {
     ifstream fin;
     fin.open("playerdata.txt");
@@ -15,7 +16,7 @@ void Player::loadPlayer() {
     fin >> level >> hp >> atk >> def;
     fin.close();
 }
-
+//save the player to playerdata.txt
 void Player::savePlayer() {
     ofstream fout;
     fout.open("playerdata.txt");
