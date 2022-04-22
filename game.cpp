@@ -18,8 +18,8 @@ int prompt(string output, int options) {
             throw 1;
     }
     catch (...) {
-        cout<<"Invalid input. The last option will be chosen ;)"<<endl;
-        ans = options -1;
+        cout<<"..... This is an invalid input. Are you challenging me? Bad choice ;) The last option will be chosen for you."<<endl;
+        ans = options - 1;
     }
     return ans;
 }
