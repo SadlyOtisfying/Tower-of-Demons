@@ -1,6 +1,8 @@
 #include "player.h"
 #include "tile.h"
 
+#include <ctime>
+#include <cstdlib>
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
@@ -8,6 +10,11 @@
 #include <vector>
 
 using namespace std;
+
+void initGame() {
+    cout<<fixed<<setprecision(2);
+    srand(time(NULL));
+}
 
 // prompt the user for an integer with limited options
 int prompt(string output, int options) {
@@ -41,7 +48,6 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
         }
 
         // randomly pick 12 tiles out of 36 tiles of a level
-        srand(time(NULL));
         int random[36];
         for (int j = 0; j < 36; j++)
             random[j] = j;
@@ -97,7 +103,6 @@ void printMap(vector<vector<vector<Tile>>> &map, int level) {
 }
 
 void startGame() {
-    cout << fixed << setprecision(2);
     cout << "Welcome to Tower of Demons!" << endl;
 
     // set difficulty and generate map
@@ -121,5 +126,6 @@ void startGame() {
 
 
 int main() {
+    initGame();
     startGame();
 }

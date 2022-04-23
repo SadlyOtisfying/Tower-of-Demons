@@ -1,7 +1,6 @@
 #include "tile.h"
 
 #include <cstdlib>
-#include <ctime>
 #include <iostream>
 
 using namespace std;
@@ -10,7 +9,6 @@ using namespace std;
 void Tile::generate(int level, string type) {
     this->level = level;
     this->type = type;
-    srand(time(NULL));
     if (type == "POTION") {
         value = rand() % 10 + 10;
     } else if (type == "SWORD") {
