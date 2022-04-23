@@ -2,3 +2,5 @@
 .vscode/
 playerdata.txt
 *.exe
+*.o
+game
