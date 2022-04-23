@@ -81,6 +81,13 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
 }
 
 void display(Player& p, vector<vector<vector<Tile>>>& map) {
+    int levels = (p.diff + 1) * 2;
+    cout << "Level: " << p.level + 1 << "/" << levels << "; ";
+    cout << "HP: " << p.hp << "; ";
+    cout << "ATK: " << p.atk << "; ";
+    cout << "DEF: " << p.def << "; ";
+    cout << endl;
+    
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
             if (p.x == j && p.y == i)
@@ -109,11 +116,11 @@ void die() {}
 void battle(Player& p, Tile& t) {
     while (p.hp > 0 && t.hp > 0) {
         t.hp -= p.atk * (1 - t.def * 0.01);
-        cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << "damage, it has " << t.hp << "left." << endl;
+        cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << " damage, it has " << t.hp << " HP left." << endl;
         if (t.hp <= 0)
             break;
         p.hp -= t.atk * (1 - p.def * 0.01);
-        cout << "The demon hit you for " << t.atk << " damage, you took " << t.atk * (1 - p.def * 0.01) << "damage, you have " << p.hp << "left." << endl;
+        cout << "The demon hit you for " << t.atk << " damage, you took " << t.atk * (1 - p.def * 0.01) << " damage, you have " << p.hp << " HP left." << endl;
     }
     if (t.hp <= 0) {
         cout << "You have slained the demon!" << endl;
@@ -188,8 +195,8 @@ bool start() {
         detectDemon(p, map);
         if (p.x == 6 - 1 && p.y == 6 - 1) {
             p.level++;
-            p.savePlayer();
             cout << "You have advanced to level " << p.level << " of the tower!" << endl;
+            p.savePlayer();
         }
     }
 
@@ -208,7 +215,6 @@ bool start() {
 
 int main() {
     init();
-    while (start())
-        ;
+    while (start());
     return 0;
 }
