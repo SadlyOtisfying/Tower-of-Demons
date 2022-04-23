@@ -1,6 +1,7 @@
 #include "player.h"
 
 #include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <iostream>
 
@@ -14,7 +15,8 @@ void Player::loadPlayer() {
         fin.close();
         reset();
     } else {
-        fin >> diff >> level >> hp >> atk >> def;
+        fin >> diff >> level >> hp >> atk >> def >> lastSaved;
+        cout << "Player has been loaded from " << ctime(&lastSaved);
         fin.close();
     }
 }
@@ -32,8 +34,10 @@ void Player::savePlayer() {
     fout << hp << endl;
     fout << atk << endl;
     fout << def << endl;
+    time(&lastSaved);
+    fout << lastSaved <<endl;
     fout.close();
-    cout << "Player has been saved." << endl;
+    cout << "Player last saved at " << ctime(&lastSaved);
 }
 
 void Player::reset() {
