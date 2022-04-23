@@ -1,17 +1,18 @@
 #include "player.h"
 #include "tile.h"
 
+#include <algorithm>
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
-void initGame() {
+void init() {
+    cout << "Welcome to Tower of Demons!" << endl;
     cout << fixed << setprecision(2);
     srand(time(NULL));
 }
@@ -27,7 +28,7 @@ int prompt(string output, int options) {
         if (ans < 0 || ans >= options)
             throw 1;
     } catch (...) {
-        cout << "..... This is an invalid input. Are you challenging me? Bad choice ;) The last option has been chosen for you." << endl;
+        cout << "... This is an invalid input. Are you challenging me? Bad idea ;) The last option has been chosen for you." << endl;
         ans = options - 1;
     }
     return ans;
@@ -102,12 +103,10 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
     }
 }
 
-void die() {
-
-}
+void die() {}
 
 // battle the player and the demon, trigger corresponding function based on result
-void battle(Player &p, Tile &t) {
+void battle(Player& p, Tile& t) {
     while (p.hp > 0 && t.hp > 0) {
         t.hp -= p.atk * (1 - t.def * 0.01);
         cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << "damage, it has " << t.hp << "left." << endl;
@@ -125,16 +124,20 @@ void battle(Player &p, Tile &t) {
     }
 }
 
-void startGame() {
-    cout << "Welcome to Tower of Demons!" << endl;
+void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {}
 
+void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {}
+
+bool start() {
     // make player
     Player p;
     p.loadPlayer();
 
     // set difficulty and generate map
-    if(p.diff == -1)
+    if (p.diff == -1) {
         p.diff = prompt("Please choose the difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
+        p.savePlayer();
+    }
     int levels = (p.diff + 1) * 2;
     vector<vector<vector<Tile>>> map;
     generateMap(map, levels);
@@ -181,10 +184,31 @@ void startGame() {
         } else if (move == "exit") {
         }
         display(p, map);
+        detectItem(p, map);
+        detectDemon(p, map);
+        if (p.x == 6 - 1 && p.y == 6 - 1) {
+            p.level++;
+            p.savePlayer();
+            cout << "You have advanced to level " << p.level << " of the tower!" << endl;
+        }
     }
+
+    // ending
+    cout << "You found Princess Lily tied to a chair. You immediately rescued her." << endl;
+    cout << "\"Thanks!\" she said." << endl;
+    cout << "THE END." << endl;
+    cout << "Credits: Titus Ng, Michael Kong" << endl << endl;
+
+    if (prompt("Restart? (0 - No; 1- Yes): ", 2)) {
+        p.reset();
+        return true;
+    } else
+        return false;
 }
 
 int main() {
-    initGame();
-    startGame();
+    init();
+    while (start())
+        ;
+    return 0;
 }
