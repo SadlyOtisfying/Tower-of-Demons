@@ -16,6 +16,8 @@ void Player::load() {
         reset();
     } else {
         fin >> diff >> level >> hp >> atk >> def >> lastSaved;
+        x = 0;
+        y = 0;
         cout << "Player has been loaded from " << ctime(&lastSaved);
         fin.close();
     }

@@ -78,6 +78,7 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
 
         map.push_back(temp);
     }
+    cout << "A new map has been generated." << endl;
 }
 
 void display(Player& p, vector<vector<vector<Tile>>>& map) {
@@ -110,8 +111,6 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
     }
 }
 
-void die() {}
-
 // battle the player and the demon, trigger corresponding function based on result
 void battle(Player& p, Tile& t) {
     while (p.hp > 0 && t.hp > 0) {
@@ -127,7 +126,8 @@ void battle(Player& p, Tile& t) {
         t.removeItem();
     } else {
         cout << "YOU DIED. RIP." << endl;
-        die();
+        p.load();
+        // generate map
     }
 }
 
@@ -189,15 +189,25 @@ bool start() {
                 cout << "You cannot move right." << endl;
             } else
                 cout << "You moved right." << endl;
-        } else if (move == "reset") {
+        } else if (move == "reload") {
+            if (prompt("Are you sure to reload? You will be reloaded to your last save. (0 - No; 1 - Yes): ", 2)) {
+                p.load();
+                generateMap(map, levels);
+            }
         } else if (move == "exit") {
+            if (prompt("Are you sure to exit? (0 - No; 1 - Yes): ", 2))
+                exit(0);
+        } else {
+            cout << "Invalid move. Type \"help\" to view list of moves and legend." << endl;
         }
         detectItem(p, map);
         detectDemon(p, map);
         if (p.x == 6 - 1 && p.y == 6 - 1) {
-            p.level++;
-            if(p.level == levels)
+            if (p.level == levels - 1)
                 break;
+            p.level++;
+            p.x = 0;
+            p.y = 0;
             cout << "You have advanced to level " << p.level + 1 << " of the tower!" << endl;
             p.save();
         }
@@ -205,14 +215,14 @@ bool start() {
     }
 
     // ending
-    p.save();
     cout << "You found Princess Lily tied to a chair. You immediately rescued her." << endl;
     cout << "\"Thanks!\" she said." << endl;
     cout << "THE END." << endl;
     cout << "Credits: Titus Ng, Michael Kong" << endl << endl;
 
-    if (prompt("Restart? (0 - No; 1- Yes): ", 2)) {
+    if (prompt("Restart? (0 - No; 1 - Yes): ", 2)) {
         p.reset();
+        cout << endl;
         return true;
     } else
         return false;
@@ -220,6 +230,7 @@ bool start() {
 
 int main() {
     init();
-    while (start());
+    while (start())
+        ;
     return 0;
 }
