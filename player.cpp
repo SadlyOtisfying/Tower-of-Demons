@@ -13,8 +13,7 @@ void Player::loadPlayer() {
     if (fin.fail()) {
         fin.close();
         reset();
-    }
-    else {
+    } else {
         fin >> level >> hp >> atk >> def;
         fin.close();
     }
@@ -33,7 +32,7 @@ void Player::savePlayer() {
     fout << atk << endl;
     fout << def << endl;
     fout.close();
-    cout<<"Player has been saved."<<endl;
+    cout << "Player has been saved." << endl;
 }
 
 void Player::reset() {
@@ -43,7 +42,7 @@ void Player::reset() {
     hp = 100;
     atk = 2;
     def = 2;
-    cout<<"Player has been reset."<<endl;
+    cout << "Player has been reset." << endl;
     if (remove("playerdata.txt"))
         cout << "Player reset unsuccessful :(" << endl;
     savePlayer();
