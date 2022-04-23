@@ -8,7 +8,7 @@
 using namespace std;
 
 // load the player from playerdata.txt
-void Player::loadPlayer() {
+void Player::load() {
     ifstream fin;
     fin.open("playerdata.txt");
     if (fin.fail()) {
@@ -22,7 +22,7 @@ void Player::loadPlayer() {
 }
 
 // save the player to playerdata.txt
-void Player::savePlayer() {
+void Player::save() {
     ofstream fout;
     fout.open("playerdata.txt");
     if (fout.fail()) {
@@ -49,5 +49,5 @@ void Player::reset() {
     atk = 2;
     def = 2;
     cout << "A new player has been created." << endl;
-    savePlayer();
+    save();
 }

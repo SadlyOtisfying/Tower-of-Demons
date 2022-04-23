@@ -12,8 +12,8 @@ struct Player {
     int atk;
     int def;
     time_t lastSaved;
-    void loadPlayer();
-    void savePlayer();
+    void load();
+    void save();
     void reset();
 };
 

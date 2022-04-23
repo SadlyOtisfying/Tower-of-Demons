@@ -81,13 +81,13 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
 }
 
 void display(Player& p, vector<vector<vector<Tile>>>& map) {
-    int levels = (p.diff + 1) * 2;
-    cout << "Level: " << p.level + 1 << "/" << levels << "; ";
-    cout << "HP: " << p.hp << "; ";
-    cout << "ATK: " << p.atk << "; ";
-    cout << "DEF: " << p.def << "; ";
     cout << endl;
-    
+    int levels = (p.diff + 1) * 2;
+    cout << "Level " << p.level + 1 << "/" << levels << "; ";
+    cout << "HP " << p.hp << "; ";
+    cout << "ATK " << p.atk << "; ";
+    cout << "DEF " << p.def << endl;
+
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
             if (p.x == j && p.y == i)
@@ -138,21 +138,23 @@ void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {}
 bool start() {
     // make player
     Player p;
-    p.loadPlayer();
+    p.load();
 
     // set difficulty and generate map
     if (p.diff == -1) {
-        p.diff = prompt("Please choose the difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
-        p.savePlayer();
+        p.diff = prompt("Please select difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
+        p.save();
     }
     int levels = (p.diff + 1) * 2;
     vector<vector<vector<Tile>>> map;
     generateMap(map, levels);
+
+    // introduction
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
     display(p, map);
 
     // game loop
-    while (p.level < levels) {
+    while (true) {
         cout << "Your move: ";
         string move;
         cin >> move;
@@ -190,17 +192,20 @@ bool start() {
         } else if (move == "reset") {
         } else if (move == "exit") {
         }
-        display(p, map);
         detectItem(p, map);
         detectDemon(p, map);
         if (p.x == 6 - 1 && p.y == 6 - 1) {
             p.level++;
-            cout << "You have advanced to level " << p.level << " of the tower!" << endl;
-            p.savePlayer();
+            if(p.level == levels)
+                break;
+            cout << "You have advanced to level " << p.level + 1 << " of the tower!" << endl;
+            p.save();
         }
+        display(p, map);
     }
 
     // ending
+    p.save();
     cout << "You found Princess Lily tied to a chair. You immediately rescued her." << endl;
     cout << "\"Thanks!\" she said." << endl;
     cout << "THE END." << endl;
