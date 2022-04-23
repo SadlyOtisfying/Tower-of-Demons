@@ -10,6 +10,7 @@ struct Player {
     int def = 2;
     void loadPlayer();
     void savePlayer();
+    void reset();
 };
 
 #endif
