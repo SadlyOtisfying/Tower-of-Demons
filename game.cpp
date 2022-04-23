@@ -116,10 +116,10 @@ void startGame() {
     vector<vector<vector<Tile>>> map;
     generateMap(map, levels);
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
+    display(p, map);
 
     // game loop
     while (p.level < levels) {
-        display(p, map);
         cout << "Your move: ";
         string move;
         cin >> move;
@@ -157,6 +157,7 @@ void startGame() {
         } else if (move == "reset") {
         } else if (move == "exit") {
         }
+        display(p, map);
     }
 }
 
