@@ -14,7 +14,7 @@ void Player::loadPlayer() {
         fin.close();
         reset();
     } else {
-        fin >> level >> hp >> atk >> def;
+        fin >> diff >> level >> hp >> atk >> def;
         fin.close();
     }
 }
@@ -27,6 +27,7 @@ void Player::savePlayer() {
         cout << "Error in saving player :(" << endl;
         exit(1);
     }
+    fout << diff << endl;
     fout << level << endl;
     fout << hp << endl;
     fout << atk << endl;
@@ -36,6 +37,7 @@ void Player::savePlayer() {
 }
 
 void Player::reset() {
+    diff = -1;
     x = 0;
     y = 0;
     level = 0;

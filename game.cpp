@@ -105,16 +105,17 @@ void printMap(Player& p, vector<vector<vector<Tile>>>& map) {
 void startGame() {
     cout << "Welcome to Tower of Demons!" << endl;
 
-    // set difficulty and generate map
-    int diff = prompt("Please choose the difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
-    int levels = (diff + 1) * 2;
-    vector<vector<vector<Tile>>> map;
-    generateMap(map, levels);
-    cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
-
     // make player
     Player p;
     p.loadPlayer();
+
+    // set difficulty and generate map
+    if(p.diff == -1)
+        p.diff = prompt("Please choose the difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
+    int levels = (p.diff + 1) * 2;
+    vector<vector<vector<Tile>>> map;
+    generateMap(map, levels);
+    cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
 
     // game loop
     while (p.level < levels) {
