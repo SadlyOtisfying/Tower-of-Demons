@@ -79,7 +79,7 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
     }
 }
 
-void printMap(Player& p, vector<vector<vector<Tile>>>& map) {
+void display(Player& p, vector<vector<vector<Tile>>>& map) {
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
             if (p.x == j && p.y == i)
@@ -119,7 +119,7 @@ void startGame() {
 
     // game loop
     while (p.level < levels) {
-        printMap(p, map);
+        display(p, map);
         cout << "Your move: ";
         string move;
         cin >> move;
