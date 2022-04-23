@@ -7,7 +7,7 @@ using namespace std;
 
 struct Tile {
     int level;
-    string type = "";
+    string type;
     int value, atk, def;
     double hp;
     bool visible = true;

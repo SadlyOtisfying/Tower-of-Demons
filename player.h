@@ -5,8 +5,8 @@
 
 struct Player {
     int diff;
-    int x;
-    int y;
+    int x = 0;
+    int y = 0;
     int level;
     double hp;
     int atk;
