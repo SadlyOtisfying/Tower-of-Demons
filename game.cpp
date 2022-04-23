@@ -26,18 +26,22 @@ int prompt(string output, int options) {
     return ans;
 }
 
-void generateMap(vector<Tile[6][6]>& map, int levels) {
-    srand(time(NULL));
+void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
     for (int level = 0; level < levels; level++) {
-        Tile temp[6][6];
+        vector<vector<Tile>> temp;
         // set all tiles to space
         for (int i = 0; i < 6; i++) {
+            vector<Tile> temprow;
             for (int j = 0; j < 6; j++) {
-                temp[i][j].generate(level, "SPACE");
+                Tile temptile;
+                temptile.generate(level, "SPACE");
+                temprow.push_back(temptile);
             }
+            temp.push_back(temprow);
         }
 
         // randomly pick 12 tiles out of 36 tiles of a level
+        srand(time(NULL));
         int random[36];
         for (int j = 0; j < 36; j++)
             random[j] = j;
@@ -69,7 +73,7 @@ void generateMap(vector<Tile[6][6]>& map, int levels) {
     }
 }
 
-void printMap(vector<Tile[6][6]> &map, int level) {
+void printMap(vector<vector<vector<Tile>>> &map, int level) {
     for (int i=0;i<6;i++) {
         for (int j=0;j<6;j++) {
             if(map[level][i][j].visible) {
@@ -99,7 +103,7 @@ void startGame() {
     // set difficulty and generate map
     int diff = prompt("Please choose the difficulty (0 - easy; 1 - normal; 2 - hard): ", 3);
     int levels = (diff + 1) * 2;
-    vector<Tile[6][6]> map;
+    vector<vector<vector<Tile>>> map;
     generateMap(map, levels);
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
 
