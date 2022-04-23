@@ -1,9 +1,9 @@
 #include "player.h"
 #include "tile.h"
 
-#include <ctime>
-#include <cstdlib>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@
 using namespace std;
 
 void initGame() {
-    cout<<fixed<<setprecision(2);
+    cout << fixed << setprecision(2);
     srand(time(NULL));
 }
 
@@ -79,27 +79,27 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
     }
 }
 
-void printMap(vector<vector<vector<Tile>>> &map, int level) {
-    for (int i=0;i<6;i++) {
-        for (int j=0;j<6;j++) {
-            if(map[level][i][j].visible) {
-                if(map[level][i][j].type == "SPACE")
-                    cout<<"."<<" ";
-                else if(map[level][i][j].type == "POTION")
-                    cout<<"P"<<" ";
-                else if(map[level][i][j].type == "SWORD")
-                    cout<<"S"<<" ";
-                else if(map[level][i][j].type == "ARMOR")
-                    cout<<"A"<<" ";
-                else if(map[level][i][j].type == "DEMON")
-                    cout<<"D"<<" ";
-            }
-            else
-                cout<<"X"<<" ";
+void printMap(Player& p, vector<vector<vector<Tile>>>& map) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (p.x == j && p.y == i)
+                cout << "X ";
+            else if (map[p.level][i][j].visible) {
+                if (map[p.level][i][j].type == "SPACE")
+                    cout << ". ";
+                else if (map[p.level][i][j].type == "POTION")
+                    cout << "P ";
+                else if (map[p.level][i][j].type == "SWORD")
+                    cout << "S ";
+                else if (map[p.level][i][j].type == "ARMOR")
+                    cout << "A ";
+                else if (map[p.level][i][j].type == "DEMON")
+                    cout << "D ";
+            } else
+                cout << "? ";
         }
-        cout<<endl;
+        cout << endl;
     }
-
 }
 
 void startGame() {
@@ -117,39 +117,47 @@ void startGame() {
     p.loadPlayer();
 
     // game loop
-    while(p.level < levels) {
-        cout<<"Your move: ";
+    while (p.level < levels) {
+        printMap(p, map);
+        cout << "Your move: ";
         string move;
-        cin>>move;
-        for(char &c : move)
+        cin >> move;
+        for (char& c : move)
             c = tolower(c);
-        if(move == "help") {
-
+        if (move == "help") {
+        } else if (move == "up" || move == "w") {
+            p.y--;
+            if (p.y < 0) {
+                p.y = 0;
+                cout << "You cannot move up." << endl;
+            } else
+                cout << "You moved up." << endl;
+        } else if (move == "left" || move == "a") {
+            p.x--;
+            if (p.x < 0) {
+                p.x = 0;
+                cout << "You cannot move left." << endl;
+            } else
+                cout << "You moved left." << endl;
+        } else if (move == "down" || move == "s") {
+            p.y++;
+            if (p.y > 6 - 1) {
+                p.y = 6 - 1;
+                cout << "You cannot move down." << endl;
+            } else
+                cout << "You moved down." << endl;
+        } else if (move == "right" || move == "d") {
+            p.x++;
+            if (p.x > 6 - 1) {
+                p.x = 6 - 1;
+                cout << "You cannot move right." << endl;
+            } else
+                cout << "You moved right." << endl;
+        } else if (move == "reset") {
+        } else if (move == "exit") {
         }
-        else if (move == "up" || move == "w") {
-
-        }
-        else if (move == "left" || move == "a") {
-
-        }
-        else if (move == "down" || move == "s") {
-
-        }
-        else if (move == "right" || move == "d") {
-
-        }
-        else if (move == "reset") {
-
-        }
-        else if (move == "exit") {
-            
-        }
-
     }
-
 }
-
-
 
 int main() {
     initGame();
