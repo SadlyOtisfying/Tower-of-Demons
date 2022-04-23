@@ -12,7 +12,6 @@ void Player::loadPlayer() {
     fin.open("playerdata.txt");
     if (fin.fail()) {
         fin.close();
-        cout << "Error in loading player. Player will be reset." << endl;
         reset();
     }
     else {
@@ -34,6 +33,7 @@ void Player::savePlayer() {
     fout << atk << endl;
     fout << def << endl;
     fout.close();
+    cout<<"Player has been saved."<<endl;
 }
 
 void Player::reset() {
@@ -43,9 +43,8 @@ void Player::reset() {
     hp = 100;
     atk = 2;
     def = 2;
+    cout<<"Player has been reset."<<endl;
     if (remove("playerdata.txt"))
         cout << "Player reset unsuccessful :(" << endl;
-    else
-        cout << "Successfully reset player :)" << endl;
     savePlayer();
 }
