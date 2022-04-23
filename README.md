@@ -19,7 +19,6 @@ Game Rules:
 8) Sword will increase the attack damage of the player
 9) Armor will reduce the damage from demons taken by the player
 10) There will be 2, 4, or 6 levels depending on the difficulty chosen
-11) A boss will appear in the last level
 
 List of features:
 
