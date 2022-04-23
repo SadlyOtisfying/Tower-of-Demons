@@ -69,7 +69,7 @@ void generateMap(vector<Tile[6][6]>& map, int levels) {
     }
 }
 
-int main() {
+void startGame() {
     cout << fixed << setprecision(2);
     cout << "Welcome to Tower of Demons!" << endl;
 
@@ -78,6 +78,15 @@ int main() {
     int levels = (diff + 1) * 2;
     vector<Tile[6][6]> map;
     generateMap(map, levels);
-
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
+
+    // make player
+    Player p;
+    p.loadPlayer();
+
+    
+}
+
+int main() {
+    startGame();
 }

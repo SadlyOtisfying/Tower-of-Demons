@@ -11,11 +11,14 @@ void Player::loadPlayer() {
     ifstream fin;
     fin.open("playerdata.txt");
     if (fin.fail()) {
-        cout << "Error in file opening." << endl;
-        exit(1);
+        fin.close();
+        cout << "Error in loading player. Player will be reset." << endl;
+        reset();
     }
-    fin >> level >> hp >> atk >> def;
-    fin.close();
+    else {
+        fin >> level >> hp >> atk >> def;
+        fin.close();
+    }
 }
 
 // save the player to playerdata.txt
@@ -23,7 +26,7 @@ void Player::savePlayer() {
     ofstream fout;
     fout.open("playerdata.txt");
     if (fout.fail()) {
-        cout << "Error in file opening." << endl;
+        cout << "Error in saving player." << endl;
         exit(1);
     }
     fout << level << endl;
