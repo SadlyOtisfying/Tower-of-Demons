@@ -4,3 +4,4 @@ playerdata.txt
 *.exe
 *.o
 game
+*.stackdump
