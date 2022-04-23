@@ -69,6 +69,29 @@ void generateMap(vector<Tile[6][6]>& map, int levels) {
     }
 }
 
+void printMap(vector<Tile[6][6]> &map, int level) {
+    for (int i=0;i<6;i++) {
+        for (int j=0;j<6;j++) {
+            if(map[level][i][j].visible) {
+                if(map[level][i][j].type == "SPACE")
+                    cout<<"."<<" ";
+                else if(map[level][i][j].type == "POTION")
+                    cout<<"P"<<" ";
+                else if(map[level][i][j].type == "SWORD")
+                    cout<<"S"<<" ";
+                else if(map[level][i][j].type == "ARMOR")
+                    cout<<"A"<<" ";
+                else if(map[level][i][j].type == "DEMON")
+                    cout<<"D"<<" ";
+            }
+            else
+                cout<<"X"<<" ";
+        }
+        cout<<endl;
+    }
+
+}
+
 void startGame() {
     cout << fixed << setprecision(2);
     cout << "Welcome to Tower of Demons!" << endl;
@@ -84,8 +107,14 @@ void startGame() {
     Player p;
     p.loadPlayer();
 
-    
+    for(int i = 0;i<levels;i++){
+        printMap(map, i);
+        cout<<endl;
+    }
+
 }
+
+
 
 int main() {
     startGame();
