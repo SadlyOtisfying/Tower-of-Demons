@@ -45,6 +45,5 @@ void Player::reset() {
     atk = 2;
     def = 2;
     cout << "A new player has been created." << endl;
-    remove("playerdata.txt");
     savePlayer();
 }
