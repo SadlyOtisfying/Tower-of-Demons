@@ -106,7 +106,7 @@ void die() {
 
 }
 
-// battle the player and the demon. return true if player survives; false if player dies
+// battle the player and the demon, trigger corresponding function based on result
 void battle(Player &p, Tile &t) {
     while (p.hp > 0 && t.hp > 0) {
         t.hp -= p.atk * (1 - t.def * 0.01);
