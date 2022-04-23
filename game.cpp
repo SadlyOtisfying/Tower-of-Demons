@@ -116,9 +116,35 @@ void startGame() {
     Player p;
     p.loadPlayer();
 
-    for(int i = 0;i<levels;i++){
-        printMap(map, i);
-        cout<<endl;
+    // game loop
+    while(p.level < levels) {
+        cout<<"Your move: ";
+        string move;
+        cin>>move;
+        for(char &c : move)
+            c = tolower(c);
+        if(move == "help") {
+
+        }
+        else if (move == "up" || move == "w") {
+
+        }
+        else if (move == "left" || move == "a") {
+
+        }
+        else if (move == "down" || move == "s") {
+
+        }
+        else if (move == "right" || move == "d") {
+
+        }
+        else if (move == "reset") {
+
+        }
+        else if (move == "exit") {
+            
+        }
+
     }
 
 }
