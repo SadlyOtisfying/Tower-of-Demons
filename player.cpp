@@ -24,7 +24,7 @@ void Player::savePlayer() {
     ofstream fout;
     fout.open("playerdata.txt");
     if (fout.fail()) {
-        cout << "Error in saving player." << endl;
+        cout << "Error in saving player :(" << endl;
         exit(1);
     }
     fout << level << endl;
@@ -42,8 +42,8 @@ void Player::reset() {
     hp = 100;
     atk = 2;
     def = 2;
-    cout << "Player has been reset." << endl;
+    cout << "A new player has been created." << endl;
     if (remove("playerdata.txt"))
-        cout << "Player reset unsuccessful :(" << endl;
+        cout << "Error in deleting old player data :(" << endl;
     savePlayer();
 }
