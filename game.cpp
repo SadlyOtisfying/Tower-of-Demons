@@ -1,13 +1,13 @@
 #include "player.h"
 #include "tile.h"
 
-#include <algorithm>
 #include <cstdlib>
 #include <ctime>
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -99,6 +99,29 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
                 cout << "? ";
         }
         cout << endl;
+    }
+}
+
+void die() {
+
+}
+
+// battle the player and the demon. return true if player survives; false if player dies
+void battle(Player &p, Tile &t) {
+    while (p.hp > 0 && t.hp > 0) {
+        t.hp -= p.atk * (1 - t.def * 0.01);
+        cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << "damage, it has " << t.hp << "left." << endl;
+        if (t.hp <= 0)
+            break;
+        p.hp -= t.atk * (1 - p.def * 0.01);
+        cout << "The demon hit you for " << t.atk << " damage, you took " << t.atk * (1 - p.def * 0.01) << "damage, you have " << p.hp << "left." << endl;
+    }
+    if (t.hp <= 0) {
+        cout << "You have slained the demon!" << endl;
+        t.removeItem();
+    } else {
+        cout << "YOU DIED. RIP." << endl;
+        die();
     }
 }
 

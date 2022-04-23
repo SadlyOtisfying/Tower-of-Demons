@@ -2,7 +2,6 @@
 #define TILE_H
 
 #include <string>
-#include "player.h"
 
 using namespace std;
 
@@ -13,7 +12,6 @@ struct Tile {
     double hp;
     bool visible = true;
     void generate(int level, string type);
-    bool battle(Player& p);
     void removeItem();
 };
 
