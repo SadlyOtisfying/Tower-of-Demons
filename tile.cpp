@@ -9,7 +9,7 @@ void Tile::generate(int level, string type) {
     this->level = level;
     this->type = type;
     if (type == "POTION") {
-        value = rand() % 10 + 10;
+        value = rand() % 10 + 5;
     } else if (type == "SWORD") {
         value = (rand() % 5 + 3) * (level + 1);
     } else if (type == "ARMOR") {
