@@ -11,13 +11,13 @@ void Tile::generate(int level, string type) {
     if (type == "POTION") {
         value = rand() % 10 + 10;
     } else if (type == "SWORD") {
-        value = (rand() % 5 + 3) * level;
+        value = (rand() % 5 + 3) * (level + 1);
     } else if (type == "ARMOR") {
-        value = (rand() % 5 + 5) * level;
+        value = (rand() % 5 + 5) * (level + 1);
     } else if (type == "DEMON") {
-        hp = (rand() % 5 + 5) * level;
-        atk = (rand() % 4 + 1) * level;
-        def = (rand() % 5 + 5) * level;
+        hp = (rand() % 5 + 5) * (level + 1);
+        atk = (rand() % 4 + 1) * (level + 1);
+        def = (rand() % 5 + 5) * (level + 1);
     }
 }
 

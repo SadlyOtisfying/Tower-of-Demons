@@ -111,29 +111,40 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
     }
 }
 
-// battle the player and the demon, trigger corresponding function based on result
-void battle(Player& p, Tile& t) {
-    while (p.hp > 0 && t.hp > 0) {
-        t.hp -= p.atk * (1 - t.def * 0.01);
-        cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << " damage, it has " << t.hp << " HP left." << endl;
-        if (t.hp <= 0)
-            break;
-        p.hp -= t.atk * (1 - p.def * 0.01);
-        cout << "The demon hit you for " << t.atk << " damage, you took " << t.atk * (1 - p.def * 0.01) << " damage, you have " << p.hp << " HP left." << endl;
-    }
-    if (t.hp <= 0) {
-        cout << "You have slained the demon!" << endl;
-        t.removeItem();
-    } else {
-        cout << "YOU DIED. RIP." << endl;
-        p.load();
-        // generate map
-    }
-}
-
 void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {}
 
-void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {}
+void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
+    for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+            if (p.x + j >= 0 && p.x + j < 6 && p.y + i >= 0 && p.y + i < 6) {
+                Tile& t = map[p.level][p.y + i][p.x + j];
+                if (t.type == "DEMON") {
+                    cout << "You encountered a demon! Entering battle..." << endl << endl;
+                    cout << "You: HP " << p.hp << "; ATK " << p.atk << "; DEF " << p.def << endl;
+                    cout << "Demon: HP " << t.hp << "; ATK " << t.atk << "; DEF " << t.def << endl;
+                    while (p.hp > 0 && t.hp > 0) {
+                        t.hp -= p.atk * (1 - t.def * 0.01);
+                        cout << "You hit the demon for " << p.atk << " damage, it took " << p.atk * (1 - t.def * 0.01) << " damage, it has " << t.hp << " HP left." << endl;
+                        if (t.hp <= 0)
+                            break;
+                        p.hp -= t.atk * (1 - p.def * 0.01);
+                        cout << "The demon hit you for " << t.atk << " damage, you took " << t.atk * (1 - p.def * 0.01) << " damage, you have " << p.hp << " HP left." << endl;
+                    }
+                    if (t.hp <= 0) {
+                        cout << "You have slained the demon!" << endl;
+                        t.removeItem();
+                    } else {
+                        cout << "YOU DIED. RIP." << endl;
+                        p.load();
+                        int levels = (p.diff + 1) * 2;
+                        generateMap(map, levels);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}
 
 bool start() {
     // make player
