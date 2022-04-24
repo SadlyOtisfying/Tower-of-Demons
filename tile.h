@@ -10,7 +10,7 @@ struct Tile {
     string type;
     int value, atk, def;
     double hp;
-    bool visible = true;
+    bool visible = false;
     void generate(int level, string type);
     void clear();
 };

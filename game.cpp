@@ -35,6 +35,7 @@ int prompt(string output, int options) {
 }
 
 void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
+    map.clear();
     for (int level = 0; level < levels; level++) {
         vector<vector<Tile>> temp;
         // set all tiles to space
@@ -81,6 +82,13 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
     cout << "A new map has been generated." << endl;
 }
 
+void makeVisible(Player& p, vector<vector<vector<Tile>>>& map) {
+    for (int i = -1; i <= 1; i++)
+        for (int j = -1; j <= 1; j++)
+            if (p.x + j >= 0 && p.x + j < 6 && p.y + i >= 0 && p.y + i < 6)
+                map[p.level][p.y + i][p.x + j].visible = true;
+}
+
 void display(Player& p, vector<vector<vector<Tile>>>& map) {
     cout << endl;
     int levels = (p.diff + 1) * 2;
@@ -88,7 +96,7 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
     cout << "HP " << p.hp << "; ";
     cout << "ATK " << p.atk << "; ";
     cout << "DEF " << p.def << endl;
-
+    makeVisible(p, map);
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
             if (p.x == j && p.y == i)
