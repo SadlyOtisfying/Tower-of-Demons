@@ -111,7 +111,37 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
     }
 }
 
-void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {}
+void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {
+    Tile& t = map[p.level][p.y][p.x];
+    if (t.type == "POTION") {
+        cout << endl;
+        cout << "You found a potion (+" << t.value << " HP)!" << endl;
+        int oldhp = p.hp;
+        p.hp = min(p.hp + t.value, 100.00);
+        cout << "Added " << p.hp - oldhp << " HP. Your HP is now " << p.hp << "." << endl;
+        t.clear();
+    } else if (t.type == "SWORD") {
+        cout << endl;
+        cout << "You found a sword (ATK " << t.value << ")!" << endl;
+        if (prompt("Do you want to equip the sword? (0 - No; 1 - Yes): ", 2)) {
+            p.atk = t.value;
+            cout << "Sword equipped. ";
+        } else
+            cout << "Sword not equipped. ";
+        cout << "Your ATK is now " << p.atk << "." << endl;
+        t.clear();
+    } else if (t.type == "ARMOR") {
+        cout << endl;
+        cout << "You found an armor (DEF " << t.value << ")!" << endl;
+        if (prompt("Do you want to equip the armor? (0 - No; 1 - Yes): ", 2)) {
+            p.def = t.value;
+            cout << "Armor equipped. ";
+        } else
+            cout << "Armor not equipped. ";
+        cout << "Your DEF is now " << p.def << "." << endl;
+        t.clear();
+    }
+}
 
 void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
     for (int i = -1; i <= 1; i++) {
@@ -227,6 +257,7 @@ bool start() {
     }
 
     // ending
+    cout << endl;
     cout << "You found Princess Lily tied to a chair. You immediately rescued her." << endl;
     cout << "\"Thanks!\" she said." << endl;
     cout << "THE END." << endl;
@@ -242,7 +273,6 @@ bool start() {
 
 int main() {
     init();
-    while (start())
-        ;
+    while (start());
     return 0;
 }
