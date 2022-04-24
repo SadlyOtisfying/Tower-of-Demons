@@ -12,7 +12,7 @@ struct Tile {
     double hp;
     bool visible = true;
     void generate(int level, string type);
-    void removeItem();
+    void clear();
 };
 
 #endif

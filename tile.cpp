@@ -21,6 +21,6 @@ void Tile::generate(int level, string type) {
     }
 }
 
-void Tile::removeItem() {
+void Tile::clear() {
     type = "SPACE";
 }

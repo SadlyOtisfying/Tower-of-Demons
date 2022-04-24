@@ -133,7 +133,7 @@ void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
                     }
                     if (t.hp <= 0) {
                         cout << "You have slained the demon!" << endl;
-                        t.removeItem();
+                        t.clear();
                     } else {
                         cout << "YOU DIED. RIP." << endl << endl;
                         p.load();
