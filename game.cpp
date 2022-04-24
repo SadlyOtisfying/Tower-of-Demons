@@ -200,11 +200,14 @@ bool start() {
     generateMap(map, levels);
 
     // introduction
+    cout << endl;
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
-    display(p, map);
 
     // game loop
     while (true) {
+        detectItem(p, map);
+        detectDemon(p, map);
+        display(p, map);
         cout << "Your move: ";
         string move;
         cin >> move;
@@ -250,18 +253,18 @@ bool start() {
         } else {
             cout << "Invalid move. Type \"help\" to view list of moves and legend." << endl;
         }
-        detectItem(p, map);
-        detectDemon(p, map);
         if (p.x == 6 - 1 && p.y == 6 - 1) {
+            detectItem(p, map);
+            detectDemon(p, map);
             if (p.level == levels - 1)
                 break;
             p.level++;
             p.x = 0;
             p.y = 0;
+            cout << endl;
             cout << "You have advanced to level " << p.level + 1 << " of the tower!" << endl;
             p.save();
         }
-        display(p, map);
     }
 
     // ending
