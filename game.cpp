@@ -119,7 +119,8 @@ void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
             if (p.x + j >= 0 && p.x + j < 6 && p.y + i >= 0 && p.y + i < 6) {
                 Tile& t = map[p.level][p.y + i][p.x + j];
                 if (t.type == "DEMON") {
-                    cout << "You encountered a demon! Entering battle..." << endl << endl;
+                    cout << endl;
+                    cout << "You encountered a demon! Entering battle..." << endl;
                     cout << "You: HP " << p.hp << "; ATK " << p.atk << "; DEF " << p.def << endl;
                     cout << "Demon: HP " << t.hp << "; ATK " << t.atk << "; DEF " << t.def << endl;
                     while (p.hp > 0 && t.hp > 0) {
@@ -134,7 +135,7 @@ void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
                         cout << "You have slained the demon!" << endl;
                         t.removeItem();
                     } else {
-                        cout << "YOU DIED. RIP." << endl;
+                        cout << "YOU DIED. RIP." << endl << endl;
                         p.load();
                         int levels = (p.diff + 1) * 2;
                         generateMap(map, levels);
