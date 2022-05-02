@@ -172,6 +172,7 @@ void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
                     if (t.hp <= 0) {
                         cout << "You have slained the demon!" << endl;
                         t.clear();
+                        display(p, map);
                     } else {
                         cout << "YOU DIED. RIP." << endl << endl;
                         p.load();
@@ -204,10 +205,9 @@ bool start() {
     cout << "Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck." << endl;
 
     // game loop
+    display(p, map);
     while (true) {
-        detectItem(p, map);
-        detectDemon(p, map);
-        display(p, map);
+        cout << endl;
         cout << "Your move: ";
         string move;
         cin >> move;
@@ -253,17 +253,23 @@ bool start() {
         } else {
             cout << "Invalid move. Type \"help\" to view list of moves and legend." << endl;
         }
+
+        display(p, map);
+        detectItem(p, map);
+        detectDemon(p, map);
+
         if (p.x == 6 - 1 && p.y == 6 - 1) {
-            detectItem(p, map);
-            detectDemon(p, map);
             if (p.level == levels - 1)
                 break;
-            p.level++;
-            p.x = 0;
-            p.y = 0;
             cout << endl;
             cout << "You have advanced to level " << p.level + 1 << " of the tower!" << endl;
             p.save();
+            p.level++;
+            p.x = 0;
+            p.y = 0;
+            display(p, map);
+            detectItem(p, map);
+            detectDemon(p, map);
         }
     }
 
