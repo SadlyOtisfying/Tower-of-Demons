@@ -4,7 +4,6 @@ Team members:
 Kong Man Min (3035929217), Ng Tsz Hin (3035855571)
 
 Description:
-
 This is a text-based adventure game.
 Once upon a time, Princess Lily was captured by some demons and was locked in the top of a tower. The player will need to enter the tower from level 1 and find a path to reach the next level, until he reaches the top, where he will save Princess Lily.
 
@@ -20,8 +19,13 @@ Game Rules:
 9) Armor will reduce the damage from demons taken by the player
 10) There will be 2, 4, or 6 levels depending on the difficulty chosen
 
-List of features:
+Compilation and execution instructions:
+Change to the game directory.
+To compile, type "make game".
+To run the game, type "./game".
+To completely reset data, remove the file "playerdata.txt".
 
+List of features:
 1(Generation of random game sets or events):
 Demon, potion, sword and armor will be spawned randomly. The map will also be regenerated every game.
 
