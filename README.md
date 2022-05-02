@@ -23,21 +23,22 @@ Game Rules:
 List of features:
 
 1(Generation of random game sets or events):
-Demon, potion, sword and armor will be spawned randomly. 
+Demon, potion, sword and armor will be spawned randomly. The map will also be regenerated every game.
 
 2(Data structures for storing game status):
 The position, health point, attack damage and player's armor are stored in a struct.
-The map of each level is stored in a 2D character array 
+Each tile of the map is stored in a Tile struct
+The map of each level is stored in a 2D Tile vector 
 
 3(Dynamic memory management):
-The difficulty of the game can be inputted by the player when the game is start, which will determine the number of levels stored.
+The difficulty of the game can be inputted by the player when the game is start, which will determine the number of levels stored in the map vector.
 
 4(File input/output):
 After each level, information about the player will be written on a text file.
 If player dies or closes and reopens the game, the previous save will be loaded and the player will need to start at (0, 0) of the level.
 
 5(Program codes in multiple files):
-Codes of player, map, potion, sword, armor, and demons are seperated into files and can be reused during coding.
+Codes of player, Tile, and game logic are seperated into files and can be reused during coding.
 
 
 
