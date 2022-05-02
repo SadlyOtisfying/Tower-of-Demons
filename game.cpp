@@ -13,6 +13,7 @@ using namespace std;
 
 void init() {
     cout << "Welcome to Tower of Demons!" << endl;
+    cout << "Please type \"help\" for instructions." << endl;
     cout << fixed << setprecision(2);
     srand(time(NULL));
 }
@@ -214,6 +215,29 @@ bool start() {
         for (char& c : move)
             c = tolower(c);
         if (move == "help") {
+            cout<<"Moves:"<<endl;
+            cout<<"\"w\" or \"up\": move the player up 1 tile"<<endl;
+            cout<<"\"a\" or \"left\": move the player left 1 tile"<<endl;
+            cout<<"\"s\" or \"down\": move the player down 1 tile"<<endl;
+            cout<<"\"d\" or \"right\": move the player right 1 tile"<<endl;
+            cout<<"\"reload\": reload the last save"<<endl;
+            cout<<"\"exit\": leave the game without save"<<endl;
+            cout<<endl;
+            cout<<"Map informations:"<<endl;
+            cout<<"\"X\": Player's location"<<endl;
+            cout<<"\"D\": demons - monsters that will attack you"<<endl;
+            cout<<"\"P\": potion - regen your hp"<<endl;
+            cout<<"\"A\": armor - increase your defense"<<endl;
+            cout<<"\"S\": sword - increase your attack"<<endl;
+            cout<<"\".\": empty spaces"<<endl;
+            cout<<"\"?\": unknown tiles"<<endl;
+            cout<<endl;
+            cout<<"Basic instructions:"<<endl;
+            cout<<"The game will be saved once you finish one level."<<endl;
+            cout<<"You can only see the tiles next to you."<<endl;
+            cout<<"Move to the bottom right corner to go to the next level."<<endl;
+
+
         } else if (move == "up" || move == "w") {
             p.y--;
             if (p.y < 0) {
