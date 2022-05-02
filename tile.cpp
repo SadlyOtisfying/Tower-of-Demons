@@ -21,6 +21,7 @@ void Tile::generate(int level, string type) {
     }
 }
 
+// turn the tile to empty space
 void Tile::clear() {
     type = "SPACE";
 }

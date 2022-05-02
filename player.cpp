@@ -42,6 +42,7 @@ void Player::save() {
     cout << "Player last saved at " << ctime(&lastSaved);
 }
 
+// reset player status
 void Player::reset() {
     diff = -1;
     x = 0;

@@ -82,14 +82,14 @@ void generateMap(vector<vector<vector<Tile>>>& map, int levels) {
     }
     cout << "A new map has been generated." << endl;
 }
-
+// make the map visible to player
 void makeVisible(Player& p, vector<vector<vector<Tile>>>& map) {
     for (int i = -1; i <= 1; i++)
         for (int j = -1; j <= 1; j++)
             if (p.x + j >= 0 && p.x + j < 6 && p.y + i >= 0 && p.y + i < 6)
                 map[p.level][p.y + i][p.x + j].visible = true;
 }
-
+// display player status and map
 void display(Player& p, vector<vector<vector<Tile>>>& map) {
     cout << endl;
     int levels = (p.diff + 1) * 2;
@@ -119,7 +119,7 @@ void display(Player& p, vector<vector<vector<Tile>>>& map) {
         cout << endl;
     }
 }
-
+// function to let player see when get the item
 void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {
     Tile& t = map[p.level][p.y][p.x];
     if (t.type == "POTION") {
@@ -151,7 +151,7 @@ void detectItem(Player& p, vector<vector<vector<Tile>>>& map) {
         t.clear();
     }
 }
-
+// function to let player see when battling
 void detectDemon(Player& p, vector<vector<vector<Tile>>>& map) {
     for (int i = -1; i <= 1; i++) {
         for (int j = -1; j <= 1; j++) {
@@ -215,28 +215,27 @@ bool start() {
         for (char& c : move)
             c = tolower(c);
         if (move == "help") {
-            cout<<"Moves:"<<endl;
-            cout<<"\"w\" or \"up\": move the player up 1 tile"<<endl;
-            cout<<"\"a\" or \"left\": move the player left 1 tile"<<endl;
-            cout<<"\"s\" or \"down\": move the player down 1 tile"<<endl;
-            cout<<"\"d\" or \"right\": move the player right 1 tile"<<endl;
-            cout<<"\"reload\": reload the last save"<<endl;
-            cout<<"\"exit\": leave the game without save"<<endl;
-            cout<<endl;
-            cout<<"Map informations:"<<endl;
-            cout<<"\"X\": Player's location"<<endl;
-            cout<<"\"D\": demons - monsters that will attack you"<<endl;
-            cout<<"\"P\": potion - regen your hp"<<endl;
-            cout<<"\"A\": armor - increase your defense"<<endl;
-            cout<<"\"S\": sword - increase your attack"<<endl;
-            cout<<"\".\": empty spaces"<<endl;
-            cout<<"\"?\": unknown tiles"<<endl;
-            cout<<endl;
-            cout<<"Basic instructions:"<<endl;
-            cout<<"The game will be saved once you finish one level."<<endl;
-            cout<<"You can only see the tiles next to you."<<endl;
-            cout<<"Move to the bottom right corner to go to the next level."<<endl;
-
+            cout << "Moves:" << endl;
+            cout << "\"w\" or \"up\": move the player up 1 tile" << endl;
+            cout << "\"a\" or \"left\": move the player left 1 tile" << endl;
+            cout << "\"s\" or \"down\": move the player down 1 tile" << endl;
+            cout << "\"d\" or \"right\": move the player right 1 tile" << endl;
+            cout << "\"reload\": reload the last save" << endl;
+            cout << "\"exit\": leave the game without save" << endl;
+            cout << endl;
+            cout << "Map informations:" << endl;
+            cout << "\"X\": Player's location" << endl;
+            cout << "\"D\": demons - monsters that will attack you" << endl;
+            cout << "\"P\": potion - regen your hp" << endl;
+            cout << "\"A\": armor - increase your defense" << endl;
+            cout << "\"S\": sword - increase your attack" << endl;
+            cout << "\".\": empty spaces" << endl;
+            cout << "\"?\": unknown tiles" << endl;
+            cout << endl;
+            cout << "Basic instructions:" << endl;
+            cout << "The game will be saved once you finish one level." << endl;
+            cout << "You can only see the tiles next to you." << endl;
+            cout << "Move to the bottom right corner to go to the next level." << endl;
 
         } else if (move == "up" || move == "w") {
             p.y--;
@@ -314,6 +313,7 @@ bool start() {
 
 int main() {
     init();
-    while (start());
+    while (start())
+        ;
     return 0;
 }
