@@ -274,7 +274,7 @@ bool start() {
             if (prompt("Are you sure to exit? (0 - No; 1 - Yes): ", 2))
                 exit(0);
         } else {
-            cout << "Invalid move. Type \"help\" to view list of moves and legend." << endl;
+            cout << "Invalid move. Type \"help\" to view list of moves and map informations." << endl;
         }
 
         display(p, map);
