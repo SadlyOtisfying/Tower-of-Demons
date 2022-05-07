@@ -1,0 +1,556 @@
+Welcome to Tower of Demons!
+Please type "help" for instructions.
+A new player has been created.
+Player last saved at Sat May 07 10:16:57 2022
+Please select difficulty (0 - easy; 1 - normal; 2 - hard): 0
+Player last saved at Sat May 07 10:17:13 2022
+A new map has been generated.
+
+Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck.
+
+Level 1/2; HP 100.00; ATK 2; DEF 2
+X P ? ? ? ?
+. A ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: help
+Moves:
+"w" or "up": move the player up 1 tile
+"a" or "left": move the player left 1 tile
+"s" or "down": move the player down 1 tile
+"d" or "right": move the player right 1 tile
+"reload": reload the last save
+"exit": leave the game without save
+
+Map informations:
+"X": Player's location
+"D": demons - monsters that will attack you
+"P": potion - regen your hp
+"A": armor - increase your defense
+"S": sword - increase your attack
+".": empty spaces
+"?": unknown tiles
+
+Basic instructions:
+The game will be saved once you finish one level.
+You can only see the tiles next to you.
+Move to the bottom right corner to go to the next level.
+
+Level 1/2; HP 100.00; ATK 2; DEF 2
+X P ? ? ? ?
+. A ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 100.00; ATK 2; DEF 2
+. P ? ? ? ?
+X A ? ? ? ?
+P . ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 100.00; ATK 2; DEF 2
+. P A ? ? ?
+. X A ? ? ?
+P . . ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found an armor (DEF 9)!
+Do you want to equip the armor? (0 - No; 1 - Yes): 1
+Armor equipped. Your DEF is now 9.
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 100.00; ATK 2; DEF 9
+. P A . ? ?
+. . X D ? ?
+P . . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found an armor (DEF 6)!
+Do you want to equip the armor? (0 - No; 1 - Yes): 0
+Armor not equipped. Your DEF is now 9.
+
+You encountered a demon! Entering battle...
+You: HP 100.00; ATK 2; DEF 9
+Demon: HP 8.00; ATK 3; DEF 6
+You hit the demon for 2 damage, it took 1.88 damage, it has 6.12 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 97.27 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 4.24 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 94.54 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 2.36 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 91.81 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 0.48 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 89.08 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has -1.40 HP left.
+You have slained the demon!
+
+Level 1/2; HP 89.08; ATK 2; DEF 9
+. P A . ? ?
+. . X . ? ?
+P . . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: w
+You moved up.
+
+Level 1/2; HP 89.08; ATK 2; DEF 9
+. P X . ? ?
+. . . . ? ?
+P . . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found an armor (DEF 7)!
+Do you want to equip the armor? (0 - No; 1 - Yes): 0
+Armor not equipped. Your DEF is now 9.
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 89.08; ATK 2; DEF 9
+. P . . ? ?
+. . X . ? ?
+P . . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 89.08; ATK 2; DEF 9
+. P . . ? ?
+. . . . ? ?
+P . X . ? ?
+? D . D ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You encountered a demon! Entering battle...
+You: HP 89.08; ATK 2; DEF 9
+Demon: HP 9.00; ATK 4; DEF 6
+You hit the demon for 2 damage, it took 1.88 damage, it has 7.12 HP left.
+The demon hit you for 4 damage, you took 3.64 damage, you have 85.44 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 5.24 HP left.
+The demon hit you for 4 damage, you took 3.64 damage, you have 81.80 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 3.36 HP left.
+The demon hit you for 4 damage, you took 3.64 damage, you have 78.16 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has 1.48 HP left.
+The demon hit you for 4 damage, you took 3.64 damage, you have 74.52 HP left.
+You hit the demon for 2 damage, it took 1.88 damage, it has -0.40 HP left.
+You have slained the demon!
+
+Level 1/2; HP 74.52; ATK 2; DEF 9
+. P . . ? ?
+. . . . ? ?
+P . X . ? ?
+? . . D ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You encountered a demon! Entering battle...
+You: HP 74.52; ATK 2; DEF 9
+Demon: HP 6.00; ATK 3; DEF 5
+You hit the demon for 2 damage, it took 1.90 damage, it has 4.10 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 71.79 HP left.
+You hit the demon for 2 damage, it took 1.90 damage, it has 2.20 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 69.06 HP left.
+You hit the demon for 2 damage, it took 1.90 damage, it has 0.30 HP left.
+The demon hit you for 3 damage, you took 2.73 damage, you have 66.33 HP left.
+You hit the demon for 2 damage, it took 1.90 damage, it has -1.60 HP left.
+You have slained the demon!
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . ? ?
+P . X . ? ?
+? . . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S ?
+P . . X . ?
+? . . . . ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S ?
+P . . . . ?
+? . . X . ?
+? ? . . . ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S ?
+P . . . . .
+? . . . X .
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S ?
+P . . . . .
+? . . . . X
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: a
+You moved left.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S ?
+P . . . . .
+? . . . X .
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: w
+You moved up.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . ? ?
+. . . . S .
+P . . . X .
+? . . . . .
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: w
+You moved up.
+
+Level 1/2; HP 66.33; ATK 2; DEF 9
+. P . . S .
+. . . . X .
+P . . . . .
+? . . . . .
+? ? . . . P
+? ? ? ? ? ?
+
+You found a sword (ATK 3)!
+Do you want to equip the sword? (0 - No; 1 - Yes): 1
+Sword equipped. Your ATK is now 3.
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 66.33; ATK 3; DEF 9
+. P . . S .
+. . . . . .
+P . . . X .
+? . . . . .
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 66.33; ATK 3; DEF 9
+. P . . S .
+. . . . . .
+P . . . . .
+? . . . X .
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 1/2; HP 66.33; ATK 3; DEF 9
+. P . . S .
+. . . . . .
+P . . . . .
+? . . . . X
+? ? . . . P
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 66.33; ATK 3; DEF 9
+. P . . S .
+. . . . . .
+P . . . . .
+? . . . . .
+? ? . . . X
+? ? ? ? . .
+
+You found a potion (+7 HP)!
+Added 7.33 HP. Your HP is now 73.33.
+
+Your move: s
+You moved down.
+
+Level 1/2; HP 73.33; ATK 3; DEF 9
+. P . . S .
+. . . . . .
+P . . . . .
+? . . . . .
+? ? . . . .
+? ? ? ? . X
+
+You have advanced to level 1 of the tower!
+Player last saved at Sat May 07 10:19:29 2022
+
+Level 2/2; HP 73.33; ATK 3; DEF 9
+X . ? ? ? ?
+D . ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You encountered a demon! Entering battle...
+You: HP 73.33; ATK 3; DEF 9
+Demon: HP 16.00; ATK 6; DEF 16
+You hit the demon for 3 damage, it took 2.52 damage, it has 13.48 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 67.87 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has 10.96 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 62.41 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has 8.44 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 56.95 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has 5.92 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 51.49 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has 3.40 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 46.03 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has 0.88 HP left.
+The demon hit you for 6 damage, you took 5.46 damage, you have 40.57 HP left.
+You hit the demon for 3 damage, it took 2.52 damage, it has -1.64 HP left.
+You have slained the demon!
+
+Level 2/2; HP 40.57; ATK 3; DEF 9
+X . ? ? ? ?
+. . ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 2/2; HP 40.57; ATK 3; DEF 9
+. X P ? ? ?
+. . . ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 2/2; HP 40.57; ATK 3; DEF 9
+. . X . ? ?
+. . . S ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found a potion (+14 HP)!
+Added 14.57 HP. Your HP is now 54.57.
+
+Your move: s
+You moved down.
+
+Level 2/2; HP 54.57; ATK 3; DEF 9
+. . . . ? ?
+. . X S ? ?
+? S . . ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: d
+You moved right.
+
+Level 2/2; HP 54.57; ATK 3; DEF 9
+. . . . . ?
+. . . X . ?
+? S . . P ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found a sword (ATK 12)!
+Do you want to equip the sword? (0 - No; 1 - Yes): 1
+Sword equipped. Your ATK is now 12.
+
+Your move: d
+You moved right.
+
+Level 2/2; HP 54.57; ATK 12; DEF 9
+. . . . . .
+. . . . X D
+? S . . P P
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You encountered a demon! Entering battle...
+You: HP 54.57; ATK 12; DEF 9
+Demon: HP 18.00; ATK 4; DEF 10
+You hit the demon for 12 damage, it took 10.80 damage, it has 7.20 HP left.
+The demon hit you for 4 damage, you took 3.64 damage, you have 50.93 HP left.
+You hit the demon for 12 damage, it took 10.80 damage, it has -3.60 HP left.
+You have slained the demon!
+
+Level 2/2; HP 50.93; ATK 12; DEF 9
+. . . . . .
+. . . . X .
+? S . . P P
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 2/2; HP 50.93; ATK 12; DEF 9
+. . . . . .
+. . . . . .
+? S . . X P
+? ? ? . . A
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found a potion (+10 HP)!
+Added 10.93 HP. Your HP is now 60.93.
+
+Your move: d
+You moved right.
+
+Level 2/2; HP 60.93; ATK 12; DEF 9
+. . . . . .
+. . . . . .
+? S . . . X
+? ? ? . . A
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+You found a potion (+11 HP)!
+Added 11.93 HP. Your HP is now 71.93.
+
+Your move: s
+You moved down.
+
+Level 2/2; HP 71.93; ATK 12; DEF 9
+. . . . . .
+. . . . . .
+? S . . . .
+? ? ? . . X
+? ? ? ? D A
+? ? ? ? ? ?
+
+You found an armor (DEF 10)!
+Do you want to equip the armor? (0 - No; 1 - Yes): 1
+Armor equipped. Your DEF is now 10.
+
+You encountered a demon! Entering battle...
+You: HP 71.93; ATK 12; DEF 10
+Demon: HP 18.00; ATK 2; DEF 16
+You hit the demon for 12 damage, it took 10.08 damage, it has 7.92 HP left.
+The demon hit you for 2 damage, you took 1.80 damage, you have 70.13 HP left.
+You hit the demon for 12 damage, it took 10.08 damage, it has -2.16 HP left.
+You have slained the demon!
+
+Level 2/2; HP 70.13; ATK 12; DEF 10
+. . . . . .
+. . . . . .
+? S . . . .
+? ? ? . . X
+? ? ? ? . A
+? ? ? ? ? ?
+
+Your move: s
+You moved down.
+
+Level 2/2; HP 70.13; ATK 12; DEF 10
+. . . . . .
+. . . . . .
+? S . . . .
+? ? ? . . .
+? ? ? ? . X
+? ? ? ? . .
+
+You found an armor (DEF 12)!
+Do you want to equip the armor? (0 - No; 1 - Yes): 1
+Armor equipped. Your DEF is now 12.
+
+Your move: s
+You moved down.
+
+Level 2/2; HP 70.13; ATK 12; DEF 12
+. . . . . .
+. . . . . .
+? S . . . .
+? ? ? . . .
+? ? ? ? . .
+? ? ? ? . X
+
+You found Princess Lily tied to a chair. You immediately rescued her.
+"Thanks!" she said.
+THE END.
+Credits: Titus Ng, Michael Kong
+
+Restart? (0 - No; 1 - Yes): 1
+A new player has been created.
+Player last saved at Sat May 07 10:19:57 2022
+
+Player has been loaded from Sat May 07 10:19:57 2022
+Please select difficulty (0 - easy; 1 - normal; 2 - hard): 1
+Player last saved at Sat May 07 10:20:00 2022
+A new map has been generated.
+
+Your love, Princess Lily was captured by some demons and locked in the top of a tower. Now, save her. Good luck.
+
+Level 1/4; HP 100.00; ATK 2; DEF 2
+X D ? ? ? ?
+P . ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+? ? ? ? ? ?
+
+Your move: exit
+Are you sure to exit? (0 - No; 1 - Yes): 1
